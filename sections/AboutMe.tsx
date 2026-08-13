@@ -1,0 +1,15 @@
+'use client'
+
+const AboutMe = () => {
+  return (
+    <div className="relative w-full min-h-screen overflow-hidden">
+      <div className="relative z-10 h-full w-full">
+        <h1 className="mt-8 text-2xl flex justify-left text-[#6366F1] ml-20">- ABOUT ME</h1>
+        <div className="w-full flex flex-col items-center justify-center overflow-hidden">
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AboutMe;
