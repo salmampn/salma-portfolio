@@ -4,6 +4,7 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { ShimmeringText } from "@/components/ui/shimmering-text";
+import Link from "next/link";
 
 const HeroContent = () => (
   <div className="relative w-full z-10 flex h-full flex-col items-start justify-center px-6 sm:px-10 lg:px-16">
@@ -50,26 +51,52 @@ const HeroContent = () => (
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-4 mt-4">
-          <button className="font-mono inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border border-red-500/40 bg-red-500/20 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-red-300/30 hover:bg-red-400/20 md:h-12 md:w-auto md:px-8">
+        <div className="mt-4 flex flex-wrap items-center justify-start gap-3 sm:gap-4">
+          {/* Email */}
+          <a
+            href="mailto:salmamanda03@gmail.com"
+            className="font-mono inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border border-red-500/40 bg-red-500/20 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-red-300/30 hover:bg-red-400/20 md:h-12 md:w-auto md:px-8"
+            aria-label="Send me an email"
+          >
             <FiMail className="shrink-0 text-lg" />
             <span className="hidden md:inline">Email</span>
-          </button>
+          </a>
 
-          <button className="font-mono inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/10 md:h-12 md:w-auto md:px-8">
+          {/* GitHub */}
+          <a
+            href="https://github.com/salmampn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/10 md:h-12 md:w-auto md:px-8"
+            aria-label="Visit my GitHub profile"
+          >
             <FiGithub className="shrink-0 text-lg" />
             <span className="hidden md:inline">salmampn</span>
-          </button>
+          </a>
 
-          <button className="font-mono inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border border-blue-500/40 bg-blue-500/20 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-blue-300/30 hover:bg-blue-400/20 md:h-12 md:w-auto md:px-8">
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/salmampn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border border-blue-500/40 bg-blue-500/20 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-blue-300/30 hover:bg-blue-400/20 md:h-12 md:w-auto md:px-8"
+            aria-label="Visit my LinkedIn profile"
+          >
             <FiLinkedin className="shrink-0 text-lg" />
             <span className="hidden md:inline">salmampn</span>
-          </button>
+          </a>
 
-          <button className="font-mono inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border border-yellow-500/40 bg-yellow-500/20 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-yellow-300/30 hover:bg-yellow-400/20 md:h-12 md:w-auto md:px-8">
+          {/* Resume */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full border border-yellow-500/40 bg-yellow-500/20 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-yellow-300/30 hover:bg-yellow-400/20 md:h-12 md:w-auto md:px-8"
+            aria-label="Preview my resume"
+          >
             <IoDocumentTextOutline className="shrink-0 text-lg" />
-            <span className="hidden md:inline">resume</span>
-          </button>
+            <span className="hidden md:inline">Resume</span>
+          </a>
         </div>
       </div>
     </motion.div>

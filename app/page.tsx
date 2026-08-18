@@ -61,7 +61,7 @@ export default function Home() {
           <Hero />
         </section>
 
-        <section id="about" className="w-full scroll-mt-8">
+        <section id="about" className="w-full scroll">
           <AboutMe />
         </section>
 
