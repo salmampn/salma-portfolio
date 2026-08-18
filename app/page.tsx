@@ -2,11 +2,11 @@
 
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { FloatingDock } from "@/components/ui/floating-dock";
-import Hero from "@/sections/Hero";
-import AboutMe from "@/sections/AboutMe";
-import MyJourney from "@/sections/MyJourney";
-import Projects from "@/sections/Projects";
-import Achievments from "@/sections/Achievments";
+import Hero from "@/components/sections/Hero";
+import AboutMe from "@/components/sections/AboutMe";
+import MyJourney from "@/components/sections/MyJourney";
+import Projects from "@/components/sections/Projects";
+import Achievments from "@/components/sections/Achievments";
 import {
   IconBriefcase,
   IconFolder,
