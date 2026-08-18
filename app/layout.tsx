@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const outfit = Outfit({ subsets: ['latin'], variable: '--font-mono' });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,13 +20,23 @@ export const metadata: Metadata = {
   description: "Salma Manda Portfolio",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-mono", outfit.variable)}
+      className={cn(
+        "h-full antialiased",
+        outfit.variable,
+        geistSans.variable,
+        geistMono.variable
+      )}
+      data-scroll-behavior="smooth"
     >
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
