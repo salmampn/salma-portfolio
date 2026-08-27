@@ -6,7 +6,6 @@ interface MarqueeProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   reverse?: boolean;
   pauseOnHover?: boolean;
-  repeat?: number;
 }
 
 export function Marquee({
@@ -14,29 +13,36 @@ export function Marquee({
   children,
   reverse = false,
   pauseOnHover = false,
-  repeat = 4,
   ...props
 }: MarqueeProps) {
   return (
     <div
       {...props}
       className={cn(
-        "group flex w-max min-w-full overflow-hidden [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        "group relative flex w-full overflow-hidden [--duration:45s] [--gap:1.25rem]",
         className,
       )}
     >
-      {Array.from({ length: repeat }).map((_, index) => (
+      <div
+        className={cn(
+          "flex w-max shrink-0 items-center gap-[var(--gap)]",
+          reverse ? "animate-marquee-reverse" : "animate-marquee",
+          pauseOnHover && "group-hover:[animation-play-state:paused]",
+        )}
+      >
+        {/* Original content */}
+        <div className="flex shrink-0 items-center gap-[var(--gap)]">
+          {children}
+        </div>
+
+        {/* Exact duplicate ensures the loop has no visible gap */}
         <div
-          key={index}
-          className={cn(
-            "flex shrink-0 items-center justify-around [gap:var(--gap)]",
-            reverse ? "animate-marquee-reverse" : "animate-marquee",
-            pauseOnHover && "group-hover:[animation-play-state:paused]",
-          )}
+          aria-hidden="true"
+          className="flex shrink-0 items-center gap-[var(--gap)]"
         >
           {children}
         </div>
-      ))}
+      </div>
     </div>
   );
 }

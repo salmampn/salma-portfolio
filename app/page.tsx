@@ -4,7 +4,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import Hero from "@/components/sections/Hero";
 import AboutMe from "@/components/sections/AboutMe";
-import MyJourney from "@/components/sections/MyJourney";
+import Experiences from "@/components/sections/Experiences";
 import Projects from "@/components/sections/Projects";
 import Achievments from "@/components/sections/Achievments";
 import {
@@ -36,7 +36,7 @@ export default function Home() {
       icon: (
         <IconBriefcase className="h-full w-full text-white group-hover:text-white" />
       ),
-      href: "#journey",
+      href: "#experiences",
     },
     {
       title: "Projects",
@@ -66,7 +66,7 @@ export default function Home() {
         </section>
 
         <section id="journey" className="w-full scroll-mt-8">
-          <MyJourney />
+          <Experiences />
         </section>
 
         <section id="projects" className="w-full scroll-mt-8">
