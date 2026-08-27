@@ -80,7 +80,13 @@ export const CometCard = ({
   };
 
   return (
-    <div className={cn("perspective-distant transform-3d", className)}>
+    <div
+      className={cn(
+        "perspective-distant transform-3d overflow-visible",
+        className,
+      )}
+      style={{ isolation: "isolate" }}
+    >
       <motion.div
         ref={ref}
         onMouseMove={handleMouseMove}
@@ -90,8 +96,7 @@ export const CometCard = ({
           rotateY,
           translateX,
           translateY,
-          boxShadow:
-            "rgba(0, 0, 0, 0.01) 0px 520px 146px 0px, rgba(0, 0, 0, 0.04) 0px 333px 133px 0px, rgba(0, 0, 0, 0.26) 0px 83px 83px 0px, rgba(0, 0, 0, 0.29) 0px 21px 46px 0px",
+          boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.35)",
         }}
         initial={{ scale: 1, z: 0 }}
         whileHover={{
@@ -99,7 +104,7 @@ export const CometCard = ({
           z: 50,
           transition: { duration: 0.2 },
         }}
-        className="relative rounded-2xl"
+        className="relative overflow-visible rounded-2xl"
       >
         {children}
         <motion.div

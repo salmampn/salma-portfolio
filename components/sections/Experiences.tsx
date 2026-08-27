@@ -54,7 +54,9 @@ const Experiences = () => {
         </motion.div>
       </div>
 
-      <Timeline data={timelineData} />
+      <div className="relative w-full overflow-clip">
+        <Timeline data={timelineData} />
+      </div>
     </section>
   );
 };
