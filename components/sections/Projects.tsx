@@ -17,9 +17,9 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative w-full overflow-hidden py-12 lg:py-32"
+      className="relative w-full overflow-visible py-24 lg:py-32"
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="pointer-events-none absolute -inset-40 overflow-visible">
         <div className="absolute left-1/2 top-1/4 size-136 -translate-x-1/2 rounded-full bg-cyan-400/7 blur-[130px]" />
         <div className="absolute -right-32 bottom-0 size-112 rounded-full bg-indigo-500/8 blur-[130px]" />
       </div>

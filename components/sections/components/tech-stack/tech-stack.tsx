@@ -4,8 +4,8 @@ import { Braces } from "lucide-react";
 
 import { Marquee } from "@/components/ui/marquee";
 
-import { techStack } from "./tech-stack/data";
-import { TechCard } from "./tech-stack/tech-card";
+import { techStack } from "./data";
+import { TechCard } from "./tech-card";
 
 export function TechStack() {
   const reverseTechStack = [...techStack].reverse();

@@ -37,7 +37,7 @@ export function ProjectFlipCard({
 
   return (
     <div
-      className={`group relative h-132 w-full overflow-hidden rounded-3xl perspective-[1400px]  ${className}`}
+      className={`group relative h-130 w-full overflow-hidden rounded-3xl perspective-[1400px]  ${className}`}
       role="button"
       tabIndex={0}
       aria-label={`${isFlipped ? "Hide" : "Show"} details for ${project.title}`}

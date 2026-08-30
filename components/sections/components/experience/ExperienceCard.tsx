@@ -17,34 +17,33 @@ export function ExperienceCard({
   responsibilities,
   tags,
   imageWidth,
-  imageHeight
+  imageHeight,
 }: ExperienceItem) {
   return (
     <CometCard className="mb-10 w-full">
-      <div className="rounded-2xl border border-white/10 bg-white/3 p-6 sm:p-8">
-        <div className="grid gap-8 md:grid-cols-[0.9fr_1.3fr] md:gap-10">
-          {/* Left: company, logo, title, dates */}
-          <div>
-            <div className="mb-8 inline-flex items-center rounded-md border border-white/10 bg-white/5 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.12em] text-white/60">
-              {company}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 md:p-6 lg:p-8">
+        <div className="grid gap-8 md:grid-cols-[0.9fr_1.3fr] lg:gap-10">
+          <div className="flex min-w-0 flex-col items-center text-center md:items-start md:text-left lg:justify-between">
+            <div className="mb-6 inline-flex max-w-full items-center justify-center rounded-md border border-white/10 bg-white/[0.05] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 sm:text-xs sm:tracking-[0.12em]">
+              <span className="wrap-break-word text-center md:text-start">{company}</span>
             </div>
 
             {companyLogo && (
-              <div className="mb-6 flex w-full justify-center">
+              <div className="mb-6 flex w-full justify-center md:mt-4 lg:mt-0">
                 <Image
                   src={companyLogo}
                   alt={`${company} logo`}
                   width={imageWidth ?? 200}
                   height={imageHeight ?? 200}
-                  className="h-auto w-auto object-contain"
+                  className="max-h-48 w-auto object-contain"
                 />
               </div>
             )}
 
-            <h3 className="text-3xl font-bold leading-[1.1] tracking-tight text-white lg:text-5xl">
+            <h3 className="text-3xl font-bold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl md:mt-6 lg:mt-0">
               {role.map((line, index) => (
                 <span
-                  key={line}
+                  key={`${line}-${index}`}
                   className={
                     index === roleAccentIndex
                       ? "block text-cyan-300"
@@ -56,36 +55,43 @@ export function ExperienceCard({
               ))}
             </h3>
 
-            <p className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-white/40">
-              {startDate} — {endDate}
-            </p>
-            <p className="mt-1 font-mono text-xs uppercase tracking-[0.14em] text-white/40">
-              {duration}
-            </p>
+            <div className="mt-5 flex flex-wrap justify-center gap-x-3 gap-y-1 font-mono text-[10px] uppercase tracking-[0.12em] text-white/40 sm:text-xs sm:tracking-[0.14em] md:justify-start">
+              <span>
+                {startDate} — {endDate}
+              </span>
+
+              <span className="hidden text-white/20 sm:inline">•</span>
+
+              <span>{duration}</span>
+            </div>
           </div>
 
-          {/* Right: description, bullets, tags */}
-          <div>
-            <p className="text-lg leading-8 text-white sm:text-xl">
+          {/* Right: centered on mobile, aligned left from md onward */}
+          <div className="flex min-w-0 flex-col items-center text-start">
+            <p className="text-base leading-7 text-white sm:text-lg sm:leading-8">
               {summary}
             </p>
 
-            <ul className="mt-6 space-y-4">
+            <ul className="mt-6 w-full space-y-4">
               {responsibilities.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-cyan-300" />
-                  <span className="text-sm leading-7 text-white/60 md:text-base">
+                <li
+                  key={item}
+                  className="flex items-start justify-center gap-3 text-start"
+                >
+                  <CheckCircle2 className="mt-1 size-4 shrink-0 text-cyan-300" />
+
+                  <span className="text-sm leading-6 text-white/60 sm:text-base sm:leading-7">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-white/10 bg-white/4 px-3.5 py-1.5 font-mono text-xs text-white/60"
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[10px] text-white/60 sm:px-3.5 sm:text-xs"
                 >
                   {tag}
                 </span>

@@ -55,8 +55,8 @@ export const experiences: CategorizedExperienceItem[] = [
       "Debugging",
       "Assessment Design",
     ],
-    imageWidth: 72,
-    imageHeight: 72,
+    imageWidth: 140,
+    imageHeight: 140,
   },
   {
     category: "community",

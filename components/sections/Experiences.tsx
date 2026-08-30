@@ -56,7 +56,7 @@ const Experiences = () => {
   return (
     <section
       id="experiences"
-      className="relative w-full overflow-hidden py-12 lg:py-32"
+      className="relative w-full overflow-hidden py-12 lg:py-24"
     >
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <motion.div

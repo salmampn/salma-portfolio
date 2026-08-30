@@ -8,12 +8,12 @@ type ProjectMockupProps = {
 
 export function ProjectMockup({ project }: ProjectMockupProps) {
   return (
-    <div className="relative min-h-[260px] overflow-hidden rounded-2xl border border-white/10 bg-[#071017]/80 sm:min-h-[320px]">
+    <div className="relative min-h-65 overflow-hidden rounded-2xl border border-white/10 bg-[#071017]/80 sm:min-h-80">
       <div
-        className={`absolute -left-24 -top-24 size-64 rounded-full bg-gradient-to-br ${project.accent} opacity-20 blur-3xl`}
+        className={`absolute -left-24 -top-24 size-64 rounded-full bg-linear-to-br ${project.accent} opacity-20 blur-3xl`}
       />
       <div
-        className={`absolute -bottom-28 -right-20 size-72 rounded-full bg-gradient-to-br ${project.accent} opacity-20 blur-3xl`}
+        className={`absolute -bottom-28 -right-20 size-72 rounded-full bg-linear-to-br ${project.accent} opacity-20 blur-3xl`}
       />
 
       <div className="absolute inset-x-5 top-5 z-10 flex items-center justify-between">
@@ -37,7 +37,7 @@ export function ProjectMockup({ project }: ProjectMockupProps) {
           className="object-cover object-top opacity-90 transition duration-700 group-hover:scale-[1.03]"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#05090d]/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#05090d]/80 via-transparent to-transparent" />
       </div>
     </div>
   );

@@ -94,7 +94,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
         Mobile/tablet:
         One active card only, so no card is shifted or clipped.
       */}
-      <div className="relative h-120 w-full sm:h-132 lg:hidden">
+      <div className="relative h-120 w-full sm:h-130 lg:hidden">
         <motion.div
           key={projects[activeIndex].title}
           initial={{ opacity: 0, x: 20 }}
@@ -116,7 +116,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
         Active full card, plus left/right visual previews.
         overflow-visible keeps preview cards from being cut off.
       */}
-      <div className="relative hidden h-132 w-full lg:block lg:overflow-visible">
+      <div className="relative hidden h-130 w-full lg:block lg:overflow-visible">
         {projects.map((project, index) => {
           const position = getRelativePosition(index);
           const isActive = position === 0;

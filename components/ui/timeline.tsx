@@ -68,31 +68,31 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <div ref={containerRef} className="w-full font-sans md:px-10">
       <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
         {data.map((item, index) => (
-          <div
-            key={`${item.title}-${index}`}
-            className="flex justify-start pt-10 md:gap-10 md:pt-12"
-          >
-            <div className="sticky top-32 z-40 flex max-w-xs origin-top-left flex-col items-center self-start md:w-full md:max-w-sm md:flex-row lg:max-w-sm">
-              <div className="absolute left-3 flex size-10 items-center justify-center rounded-full border border-white/10 bg-[#0B0E18] md:left-3">
-                <div className="absolute size-4 animate-[dot-pulse_2.5s_ease-in-out_infinite] rounded-full bg-cyan-300/40 blur-sm" />
+        <div
+          key={`${item.title}-${index}`}
+          className="flex justify-start pt-10 md:gap-4 md:pt-16 lg:gap-10 lg:pt-24"
+        >
+          <div className="sticky top-32 z-40 flex max-w-xs origin-top-left flex-col items-center self-start md:max-w-min md:shrink-0 md:flex-row lg:w-full lg:max-w-sm">
+            <div className="absolute left-3 flex size-10 items-center justify-center rounded-full border border-white/10 bg-[#0B0E18] md:left-3">
+              <div className="absolute size-4 animate-[dot-pulse_2.5s_ease-in-out_infinite] rounded-full bg-cyan-300/40 blur-sm" />
 
-                <div className="relative size-4 rounded-full border border-cyan-300/40 bg-cyan-300/20" />
-              </div>
-
-              <h3 className="hidden text-xl font-bold text-white/80 md:block md:pl-20 md:text-4xl lg:text-5xl">
-                {item.title}
-              </h3>
+              <div className="relative size-4 rounded-full border border-cyan-300/40 bg-cyan-300/20" />
             </div>
 
-            <div className="relative w-full pl-20 pr-4 md:pl-4">
-              <h3 className="mb-4 block text-left text-2xl font-bold text-white/80 md:hidden">
-                {item.title}
-              </h3>
-
-              {item.content}
-            </div>
+            <h3 className="hidden text-xl font-bold text-white/80 md:block md:pl-20 md:text-4xl lg:text-5xl">
+              {item.title}
+            </h3>
           </div>
-        ))}
+
+          <div className="relative w-full min-w-0 pl-20 pr-4 md:flex-1 md:pl-2 md:pr-0 lg:pl-4">
+            <h3 className="mb-4 block text-left text-2xl font-bold text-white/80 md:hidden">
+              {item.title}
+            </h3>
+
+            {item.content}
+          </div>
+        </div>
+      ))}
 
         <div
           style={{ height: `${height}px` }}
