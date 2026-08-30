@@ -17,11 +17,11 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative w-full overflow-hidden py-24 lg:py-32"
+      className="relative w-full overflow-hidden py-12 lg:py-32"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-1/4 size-[34rem] -translate-x-1/2 rounded-full bg-cyan-400/[0.07] blur-[130px]" />
-        <div className="absolute -right-32 bottom-0 size-[28rem] rounded-full bg-indigo-500/[0.08] blur-[130px]" />
+        <div className="absolute left-1/2 top-1/4 size-136 -translate-x-1/2 rounded-full bg-cyan-400/7 blur-[130px]" />
+        <div className="absolute -right-32 bottom-0 size-112 rounded-full bg-indigo-500/8 blur-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -72,7 +72,7 @@ const Projects = () => {
             href="https://github.com/salmampn"
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-white/70 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 hover:text-cyan-100"
+            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/4 px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-white/70 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 hover:text-cyan-100"
           >
             <FiGithub className="size-4" />
             Explore more on GitHub

@@ -74,7 +74,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
             type="button"
             onClick={previousProject}
             aria-label="Show previous project"
-            className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/75 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+            className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/4 text-white/75 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
           >
             <ChevronLeft className="size-4" />
           </button>
@@ -83,7 +83,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
             type="button"
             onClick={nextProject}
             aria-label="Show next project"
-            className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/75 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+            className="inline-flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/4 text-white/75 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
           >
             <ChevronRight className="size-4" />
           </button>
@@ -94,7 +94,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
         Mobile/tablet:
         One active card only, so no card is shifted or clipped.
       */}
-      <div className="relative h-[480px] w-full sm:h-[520px] lg:hidden">
+      <div className="relative h-120 w-full sm:h-132 lg:hidden">
         <motion.div
           key={projects[activeIndex].title}
           initial={{ opacity: 0, x: 20 }}
@@ -116,7 +116,7 @@ export function ProjectCarousel({ projects }: ProjectCarouselProps) {
         Active full card, plus left/right visual previews.
         overflow-visible keeps preview cards from being cut off.
       */}
-      <div className="relative hidden h-[520px] w-full lg:block lg:overflow-visible">
+      <div className="relative hidden h-132 w-full lg:block lg:overflow-visible">
         {projects.map((project, index) => {
           const position = getRelativePosition(index);
           const isActive = position === 0;

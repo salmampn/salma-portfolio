@@ -21,11 +21,11 @@ export function ExperienceCard({
 }: ExperienceItem) {
   return (
     <CometCard className="mb-10 w-full">
-      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+      <div className="rounded-2xl border border-white/10 bg-white/3 p-6 sm:p-8">
         <div className="grid gap-8 md:grid-cols-[0.9fr_1.3fr] md:gap-10">
           {/* Left: company, logo, title, dates */}
           <div>
-            <div className="mb-8 inline-flex items-center rounded-md border border-white/10 bg-white/[0.05] px-3 py-1.5 font-mono text-xs uppercase tracking-[0.12em] text-white/60">
+            <div className="mb-8 inline-flex items-center rounded-md border border-white/10 bg-white/5 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.12em] text-white/60">
               {company}
             </div>
 
@@ -85,7 +85,7 @@ export function ExperienceCard({
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 font-mono text-xs text-white/60"
+                  className="rounded-full border border-white/10 bg-white/4 px-3.5 py-1.5 font-mono text-xs text-white/60"
                 >
                   {tag}
                 </span>

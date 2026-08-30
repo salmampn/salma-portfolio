@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 
 import { ProjectLinks } from "./ProjectLinks";
 import { ProjectMockup } from "./ProjectMockup";
@@ -23,7 +22,7 @@ function ProjectTags({ tags }: Pick<Project, "tags">) {
       {tags.map((tag) => (
         <span
           key={tag}
-          className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[11px] text-white/55"
+          className="rounded-full border border-white/10 bg-white/4 px-3 py-1.5 font-mono text-[11px] text-white/55"
         >
           {tag}
         </span>
@@ -65,7 +64,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.55, delay: index * 0.1 }}
       whileHover={{ y: -6 }}
-      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-cyan-300/25"
+      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/3 p-4 transition-colors hover:border-cyan-300/25"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_76%_20%,rgba(34,211,238,0.08),transparent_28%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 

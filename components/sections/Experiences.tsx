@@ -93,7 +93,7 @@ const Experiences = () => {
         <div
           role="tablist"
           aria-label="Experience categories"
-          className="inline-flex rounded-xl border border-white/10 bg-white/[0.03] p-1"
+          className="inline-flex rounded-xl border border-white/10 bg-white/3 p-1"
         >
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
