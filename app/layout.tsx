@@ -29,12 +29,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "h-full antialiased",
+        "h-full antialiased scroll-smooth",
         outfit.variable,
         geistSans.variable,
         geistMono.variable
       )}
-      data-scroll-behavior="smooth"
     >
       <body suppressHydrationWarning>{children}</body>
     </html>

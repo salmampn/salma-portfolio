@@ -1,9 +1,9 @@
 "use client";
+
 import {
-  useMotionValueEvent,
+  motion,
   useScroll,
   useTransform,
-  motion,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -18,34 +18,63 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
+    const updateHeight = () => {
+      if (!ref.current) return;
+
+      setHeight(ref.current.getBoundingClientRect().height);
+    };
+
+    updateHeight();
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+
     if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
+      resizeObserver.observe(ref.current);
     }
-  }, [ref]);
+
+    window.addEventListener("resize", updateHeight);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateHeight);
+    };
+  }, []);
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    target: ref,
+    offset: ["start center", "end center"],
   });
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const heightTransform = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, height],
+  );
+
+  const opacityTransform = useTransform(
+    scrollYProgress,
+    [0, 0.03, 0.97, 1],
+    [0, 1, 1, 0],
+  );
 
   return (
-    <div className="w-full font-sans md:px-10" ref={containerRef}>
-      <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
+    <div
+      ref={containerRef}
+      className="w-full font-sans md:px-10"
+    >
+      <div
+        ref={ref}
+        className="relative mx-auto max-w-7xl pb-20"
+      >
         {data.map((item, index) => (
           <div
-            key={index}
+            key={`${item.title}-${index}`}
             className="flex justify-start pt-10 md:gap-10 md:pt-32"
           >
             <div className="sticky top-32 z-40 flex max-w-xs origin-top-left flex-col items-center self-start md:w-full md:max-w-sm md:flex-row lg:max-w-sm">
               <div className="absolute left-3 flex size-10 items-center justify-center rounded-full border border-white/10 bg-[#0B0E18] md:left-3">
-                {/* Pulsing glow behind the dot */}
                 <div className="absolute size-4 animate-[dot-pulse_2.5s_ease-in-out_infinite] rounded-full bg-cyan-300/40 blur-sm" />
 
-                {/* Static dot on top */}
                 <div className="relative size-4 rounded-full border border-cyan-300/40 bg-cyan-300/20" />
               </div>
 
@@ -65,11 +94,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         ))}
 
         <div
-          style={{ height: height + "px" }}
+          style={{ height: `${height}px` }}
           className="absolute left-8 top-0 w-px overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-white/10 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8"
         >
           <motion.div
-            style={{ height: heightTransform, opacity: opacityTransform }}
+            style={{
+              height: heightTransform,
+              opacity: opacityTransform,
+            }}
             className="absolute inset-x-0 top-0 w-px rounded-full bg-gradient-to-t from-cyan-300 via-[#6366F1] to-transparent from-[0%] via-[10%]"
           />
         </div>

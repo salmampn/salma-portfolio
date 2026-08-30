@@ -2,6 +2,32 @@ import type { ExperienceItem } from "./types";
 
 export const experiences: ExperienceItem[] = [
   {
+    year: "2025",
+    company: "Laboratory of Faculty of Engineering and Informatics UMN",
+    companyLogo: "/umn-logo.webp",
+    role: ["Laboratory", "Assistant", "OOP"],
+    roleAccentIndex: 2,
+    startDate: "Jan 2025",
+    endDate: "Jun 2025",
+    duration: "6 mos",
+    summary:
+      "Guided 80+ students through core Object-Oriented Programming concepts and hands-on coding practice in the 2024/2025 academic year.",
+    responsibilities: [
+      "Guided 80+ students in OOP fundamentals, including classes, objects, inheritance, polymorphism, encapsulation, and object-oriented design best practices.",
+      "Led hands-on coding and debugging sessions to strengthen practical programming and problem-solving skills.",
+      "Designed instructional materials and lab exercises that supported structured, step-by-step learning.",
+      "Developed lab assessments and examination questions linking OOP concepts to real-world programming scenarios.",
+    ],
+    tags: [
+      "Object-Oriented Programming",
+      "Teaching",
+      "Mentoring",
+      "Java",
+      "Debugging",
+      "Assessment Design",
+    ],
+  },
+  {
     year: "2024",
     company: "PT Kalbe Farma Tbk",
     companyLogo: "/kalbe-logo.webp",

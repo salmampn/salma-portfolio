@@ -152,29 +152,7 @@ html {
   scroll-behavior: smooth;
 }
 
-@keyframes aurora {
-  0% {
-    background-position:
-      50% 50%,
-      0% 50%;
-  }
-
-  50% {
-    background-position:
-      50% 50%,
-      100% 50%;
-  }
-
-  100% {
-    background-position:
-      50% 50%,
-      0% 50%;
-  }
-}
-
-.animate-aurora {
-  animation: aurora 20s ease-in-out infinite;
-}
+/* MARQUEE */
 
 @keyframes marquee {
   from {
@@ -210,6 +188,8 @@ html {
     animation: none;
   }
 }
+
+/* PROFILE PULSE */
 
 @keyframes profile-pulse {
   0%,
