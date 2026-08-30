@@ -3,6 +3,7 @@
 import {
   motion,
   useScroll,
+  useSpring,
   useTransform,
 } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
@@ -45,27 +46,27 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     offset: ["start center", "end center"],
   });
 
+  const smoothScrollProgress = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 28,
+    mass: 0.35,
+  });
+
   const heightTransform = useTransform(
-    scrollYProgress,
+    smoothScrollProgress,
     [0, 1],
     [0, height],
   );
 
   const opacityTransform = useTransform(
-    scrollYProgress,
-    [0, 0.03, 0.97, 1],
+    smoothScrollProgress,
+    [0, 0.025, 0.975, 1],
     [0, 1, 1, 0],
   );
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full font-sans md:px-10"
-    >
-      <div
-        ref={ref}
-        className="relative mx-auto max-w-7xl pb-20"
-      >
+    <div ref={containerRef} className="w-full font-sans md:px-10">
+      <div ref={ref} className="relative mx-auto max-w-7xl pb-20">
         {data.map((item, index) => (
           <div
             key={`${item.title}-${index}`}
@@ -95,14 +96,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
         <div
           style={{ height: `${height}px` }}
-          className="absolute left-8 top-0 w-px overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-white/10 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] md:left-8"
+          className="absolute left-[31px] top-0 w-0.5 overflow-hidden rounded-full bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-white/15 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_5%,black_20%,black_80%,transparent_100%)] md:left-[31px]"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-px rounded-full bg-gradient-to-t from-cyan-300 via-[#6366F1] to-transparent from-[0%] via-[10%]"
+            className="absolute inset-x-0 top-0 w-full rounded-full bg-gradient-to-b from-cyan-200 via-cyan-300 to-[#6366F1] shadow-[0_0_8px_rgba(34,211,238,0.45)]"
           />
         </div>
       </div>

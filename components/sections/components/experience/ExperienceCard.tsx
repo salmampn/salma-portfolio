@@ -16,6 +16,8 @@ export function ExperienceCard({
   summary,
   responsibilities,
   tags,
+  imageWidth,
+  imageHeight
 }: ExperienceItem) {
   return (
     <CometCard className="mb-10 w-full">
@@ -23,18 +25,18 @@ export function ExperienceCard({
         <div className="grid gap-8 md:grid-cols-[0.9fr_1.3fr] md:gap-10">
           {/* Left: company, logo, title, dates */}
           <div>
-            <div className="mb-4 inline-flex items-center rounded-md border border-white/10 bg-white/[0.05] px-3 py-1.5 font-mono text-xs uppercase tracking-[0.12em] text-white/60">
+            <div className="mb-8 inline-flex items-center rounded-md border border-white/10 bg-white/[0.05] px-3 py-1.5 font-mono text-xs uppercase tracking-[0.12em] text-white/60">
               {company}
             </div>
 
             {companyLogo && (
-              <div className="mb-6 flex w-fit items-center p-3">
+              <div className="mb-6 flex w-full justify-center">
                 <Image
                   src={companyLogo}
                   alt={`${company} logo`}
-                  width={256}
-                  height={256}
-                  className="h-14 w-auto object-contain sm:h-16"
+                  width={imageWidth ?? 200}
+                  height={imageHeight ?? 200}
+                  className="h-auto w-auto object-contain"
                 />
               </div>
             )}

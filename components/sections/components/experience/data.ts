@@ -1,33 +1,14 @@
 import type { ExperienceItem } from "./types";
 
-export const experiences: ExperienceItem[] = [
+export type ExperienceCategory = "professional" | "community";
+
+export interface CategorizedExperienceItem extends ExperienceItem {
+  category: ExperienceCategory;
+}
+
+export const experiences: CategorizedExperienceItem[] = [
   {
-    year: "2025",
-    company: "Laboratory of Faculty of Engineering and Informatics UMN",
-    companyLogo: "/umn-logo.webp",
-    role: ["Laboratory", "Assistant", "OOP"],
-    roleAccentIndex: 2,
-    startDate: "Jan 2025",
-    endDate: "Jun 2025",
-    duration: "6 mos",
-    summary:
-      "Guided 80+ students through core Object-Oriented Programming concepts and hands-on coding practice in the 2024/2025 academic year.",
-    responsibilities: [
-      "Guided 80+ students in OOP fundamentals, including classes, objects, inheritance, polymorphism, encapsulation, and object-oriented design best practices.",
-      "Led hands-on coding and debugging sessions to strengthen practical programming and problem-solving skills.",
-      "Designed instructional materials and lab exercises that supported structured, step-by-step learning.",
-      "Developed lab assessments and examination questions linking OOP concepts to real-world programming scenarios.",
-    ],
-    tags: [
-      "Object-Oriented Programming",
-      "Teaching",
-      "Mentoring",
-      "Java",
-      "Debugging",
-      "Assessment Design",
-    ],
-  },
-  {
+    category: "professional",
     year: "2024",
     company: "PT Kalbe Farma Tbk",
     companyLogo: "/kalbe-logo.webp",
@@ -37,28 +18,102 @@ export const experiences: ExperienceItem[] = [
     endDate: "Jan 2026",
     duration: "1 yr 3 mos",
     summary:
-      "Built responsive Next.js interfaces for an internal Regulatory Information Management system, cutting tracking time by 30%.",
+      "Built responsive Next.js interfaces for a Regulatory Information Management system, cutting tracking time by 30%.",
     responsibilities: [
-      "Optimized PostgreSQL queries, cutting response time from 900ms to 250ms.",
-      "Shipped 10+ features with 100% on-time delivery across two releases.",
-      "Cut onboarding time by 25% through code reviews and documentation.",
-      "Fixed 20+ integration bugs, reducing production incidents by 40%.",
+      "Optimized PostgreSQL queries, reducing response time from 900ms to 250ms.",
+      "Delivered 10+ features on schedule across two release cycles.",
+      "Improved onboarding through code reviews and technical documentation.",
+      "Resolved 20+ integration bugs, reducing production incidents by 40%.",
     ],
     tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "SQL", "Git"],
+    imageWidth: 256,
+    imageHeight: 256,
   },
-
-  // Add your next role here, following the same shape:
-  // {
-  //   year: "2027",
-  //   company: "Company Name",
-  //   companyLogo: "/company-logo.webp",
-  //   role: ["Job", "Title"],
-  //   roleAccentIndex: 1,
-  //   startDate: "Month Year",
-  //   endDate: "Present",
-  //   duration: "x mos",
-  //   summary: "One-sentence overview of the role.",
-  //   responsibilities: ["Bullet one.", "Bullet two.", "Bullet three."],
-  //   tags: ["Tech", "Stack"],
-  // },
+  {
+    category: "professional",
+    year: "2025",
+    company: "Laboratory of Faculty of Engineering and Informatics UMN",
+    companyLogo: "/umn-logo.webp",
+    role: ["Laboratory", "Assistant", "OOP"],
+    roleAccentIndex: 2,
+    startDate: "Jan 2025",
+    endDate: "Jun 2025",
+    duration: "6 mos",
+    summary:
+      "Guided 80+ students in Object-Oriented Programming through practical labs and coding sessions.",
+    responsibilities: [
+      "Taught core OOP concepts and object-oriented design principles.",
+      "Led hands-on coding and debugging sessions.",
+      "Created lab materials and structured learning exercises.",
+      "Developed OOP assessments based on real-world cases.",
+    ],
+    tags: [
+      "Object-Oriented Programming",
+      "Teaching",
+      "Mentoring",
+      "Java",
+      "Debugging",
+      "Assessment Design",
+    ],
+    imageWidth: 72,
+    imageHeight: 72,
+  },
+  {
+    category: "community",
+    year: "2024",
+    company: "9th International Conference on Mechatronics Engineering",
+    companyLogo: "/iium-logo.png",
+    role: ["Conference", "Paper", "Speaker"],
+    roleAccentIndex: 2,
+    startDate: "Aug 2024",
+    endDate: "Aug 2024",
+    duration: "1 mo",
+    summary:
+      "Presented a peer-reviewed facial-recognition security paper to an international IEEE-affiliated audience at ICOM’24.",
+    responsibilities: [
+      "Presented a Telegram-bot and facial-recognition alert system at a hybrid conference in Kuala Lumpur.",
+      "Explained the system architecture, real-time recognition flow, and alert-delivery design to researchers.",
+      "Communicated technical research findings to an international audience of engineers and practitioners.",
+      "Contributed to a peer-reviewed paper later indexed on IEEE Xplore.",
+    ],
+    tags: [
+      "IEEE",
+      "Research",
+      "Computer Vision",
+      "Facial Recognition",
+      "Telegram Bot",
+      "Public Speaking",
+    ],
+    imageWidth: 200,
+    imageHeight: 200,
+  },
+  {
+    category: "community",
+    year: "2024",
+    company: "IEEE STEM Workshop 2024",
+    companyLogo: "/ieee-logo.webp",
+    role: ["Volunteer", "AI/ML", "Educator"],
+    roleAccentIndex: 1,
+    startDate: "Apr 2024",
+    endDate: "Apr 2024",
+    duration: "1 mo",
+    summary:
+      "Co-led hands-on AI and machine-learning workshops for 40+ high school students in Tangerang.",
+    responsibilities: [
+      "Co-delivered an IEEE Pre-University STEM Grant workshop with UMN IEEE volunteers.",
+      "Translated AI and machine-learning concepts into accessible, interactive lessons.",
+      "Guided practical activities designed to introduce students to technology careers.",
+      "Supported an outreach program funded through an IEEE Region 10 grant.",
+    ],
+    tags: [
+      "IEEE",
+      "AI/ML",
+      "STEM Education",
+      "Workshop",
+      "Public Speaking",
+      "Mentoring",
+    ],
+    imageWidth: 200,
+    imageHeight: 200,
+  },
 ];
