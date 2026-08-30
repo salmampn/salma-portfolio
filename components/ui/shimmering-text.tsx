@@ -36,7 +36,7 @@ function ShimmeringText({
           color: "var(--color)",
         } as React.CSSProperties
       }
-      {...(props as any)}
+      {...props}
     >
       {words.map((word, wordIdx) => {
         const wordChars = word.split("");

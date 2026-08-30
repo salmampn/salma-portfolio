@@ -6,14 +6,14 @@ import Hero from "@/components/sections/Hero";
 import AboutMe from "@/components/sections/AboutMe";
 import Experiences from "@/components/sections/Experiences";
 import Projects from "@/components/sections/Projects";
-import Achievments from "@/components/sections/Achievments";
+import Contact from "@/components/sections/Contact";
 import {
   IconBriefcase,
   IconFolder,
   IconHome,
-  IconTrophy,
   IconUser,
 } from "@tabler/icons-react";
+import { MdConnectWithoutContact } from "react-icons/md";
 
 export default function Home() {
   const navItems = [
@@ -46,11 +46,11 @@ export default function Home() {
       href: "#projects",
     },
     {
-      title: "Achievements",
+      title: "Contact",
       icon: (
-        <IconTrophy className="h-full w-full text-white group-hover:text-white" />
+        <MdConnectWithoutContact  className="h-full w-full text-white group-hover:text-white" />
       ),
-      href: "#achievements",
+      href: "#contact",
     },
   ];
 
@@ -74,7 +74,7 @@ export default function Home() {
         </section>
 
         <section id="achievements" className="w-full scroll-mt-8">
-          <Achievments />
+          <Contact />
         </section>
       </main>
 

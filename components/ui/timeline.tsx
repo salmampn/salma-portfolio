@@ -70,7 +70,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {data.map((item, index) => (
           <div
             key={`${item.title}-${index}`}
-            className="flex justify-start pt-10 md:gap-10 md:pt-32"
+            className="flex justify-start pt-10 md:gap-10 md:pt-12"
           >
             <div className="sticky top-32 z-40 flex max-w-xs origin-top-left flex-col items-center self-start md:w-full md:max-w-sm md:flex-row lg:max-w-sm">
               <div className="absolute left-3 flex size-10 items-center justify-center rounded-full border border-white/10 bg-[#0B0E18] md:left-3">
