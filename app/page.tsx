@@ -14,6 +14,7 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import { MdConnectWithoutContact } from "react-icons/md";
+import SmoothPageScroll from "@/components/ui/SmoothPageScroll";
 
 export default function Home() {
   const navItems = [
@@ -56,6 +57,7 @@ export default function Home() {
 
   return (
     <AuroraBackground className="w-full">
+      <SmoothPageScroll />
       <main className="relative z-10 flex w-full flex-col items-center justify-center overflow-hidden">
         <section id="home" className="w-full scroll-mt-8">
           <Hero />

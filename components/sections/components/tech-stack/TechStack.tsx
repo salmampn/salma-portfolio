@@ -17,10 +17,10 @@ export function TechStack() {
     >
       <div className="mx-auto mb-7 flex max-w-7xl flex-col items-center px-6 text-center sm:mb-9 sm:px-10 lg:px-16">
         <div className="flex items-center justify-center gap-4">
-          <Braces className="size-12 text-cyan-300 sm:size-14" />
+          <Braces className="size-14 text-cyan-300 md:size-20" />
 
           <div className="text-left">
-            <p className="font-mono text-2xl uppercase tracking-[0.18em] text-cyan-300 sm:text-3xl">
+            <p className="font-bold text-2xl uppercase tracking-[0.18em] text-cyan-300 sm:text-3xl">
               Tech stack
             </p>
 
