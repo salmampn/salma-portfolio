@@ -1,13 +1,14 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import type { ReactNode } from "react";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { IoDocumentTextOutline } from "react-icons/io5";
 
-import { ShimmeringText } from "@/components/ui/shimmering-text";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { ShimmeringText } from "@/components/ui/shimmering-text";
 
-const heroContainer = {
+const heroContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -17,7 +18,7 @@ const heroContainer = {
   },
 };
 
-const revealUp = {
+const revealUp: Variants = {
   hidden: {
     opacity: 0,
     y: 28,
@@ -34,7 +35,7 @@ const revealUp = {
   },
 };
 
-const badgeReveal = {
+const badgeReveal: Variants = {
   hidden: {
     opacity: 0,
     y: -18,
@@ -53,7 +54,7 @@ const badgeReveal = {
   },
 };
 
-const nameContainer = {
+const nameContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -62,7 +63,7 @@ const nameContainer = {
   },
 };
 
-const nameReveal = {
+const nameReveal: Variants = {
   hidden: {
     opacity: 0,
     y: 90,
@@ -83,7 +84,7 @@ const nameReveal = {
   },
 };
 
-const roleReveal = {
+const roleReveal: Variants = {
   hidden: {
     opacity: 0,
     x: -35,
@@ -100,7 +101,7 @@ const roleReveal = {
   },
 };
 
-const buttonsContainer = {
+const buttonsContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -110,7 +111,7 @@ const buttonsContainer = {
   },
 };
 
-const buttonReveal = {
+const buttonReveal: Variants = {
   hidden: {
     opacity: 0,
     scale: 0.55,
@@ -130,7 +131,6 @@ const buttonReveal = {
     },
   },
 };
-
 
 const HeroContent = () => {
   const shouldReduceMotion = useReducedMotion();

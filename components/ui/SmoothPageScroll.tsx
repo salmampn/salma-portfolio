@@ -16,7 +16,7 @@ export default function SmoothPageScroll() {
       // Do not interfere while the user is typing.
       if (isTyping) return;
 
-      const scrollAmount = Math.round(window.innerHeight * 0.82);
+      const scrollAmount = Math.round(window.innerHeight * 0.92);
 
       if (event.key === "PageDown") {
         event.preventDefault();

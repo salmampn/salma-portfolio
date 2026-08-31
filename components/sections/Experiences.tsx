@@ -1,19 +1,30 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import { Timeline } from "@/components/ui/timeline";
-import { EncryptedText } from "@/components/ui/encrypted-text";
 import {
   experiences,
   type ExperienceCategory,
 } from "./components/experience/data";
 import { ExperienceCard } from "./components/experience/ExperienceCard";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+    filter: "blur(6px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
 };
 
 const tabs: {
@@ -60,12 +71,12 @@ const Experiences = () => {
       className="relative w-full overflow-hidden py-16"
     >
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+        {/* Section heading */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.55 }}
           className="mb-10"
         >
           <div className="flex items-center gap-3">
@@ -79,15 +90,9 @@ const Experiences = () => {
           </div>
 
           <h2 className="mt-8 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="block">
-              <EncryptedText text="Where theory" />
-            </span>
-            <span className="block text-white/45">
-              <EncryptedText text="meets real" />
-            </span>
-            <span className="block text-cyan-300">
-              <EncryptedText text="impact." />
-            </span>
+            Where theory
+            <span className="block text-white/45">meets real</span>
+            <span className="block text-cyan-300">impact.</span>
           </h2>
 
           <p className="mt-6 max-w-3xl text-base leading-7 text-white/55 md:text-lg lg:text-xl">
@@ -96,49 +101,58 @@ const Experiences = () => {
           </p>
         </motion.div>
 
-        <div className="mb-8 flex w-full justify-center">
-        <div
-          role="tablist"
-          aria-label="Experience categories"
-          className="inline-flex rounded-xl border border-white/10 bg-white/3 p-1"
+        {/* Experience category tabs */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ delay: 0.12 }}
+          className="mb-8 flex w-full justify-center"
         >
-          {tabs.map((tab) => {
-            const isActive = activeTab === tab.id;
+          <div
+            role="tablist"
+            aria-label="Experience categories"
+            className="inline-flex rounded-xl border border-white/10 bg-white/3 p-1"
+          >
+            {tabs.map((tab) => {
+              const isActive = activeTab === tab.id;
 
-            return (
-              <button
-                key={tab.id}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                aria-controls={`${tab.id}-timeline`}
-                id={`${tab.id}-tab`}
-                onClick={() => setActiveTab(tab.id)}
-                className={`relative rounded-lg px-4 py-2.5 font-mono text-xs uppercase tracking-[0.12em] transition-colors sm:px-5 ${
-                  isActive
-                    ? "text-[#061218]"
-                    : "text-white/50 hover:text-white/80"
-                }`}
-              >
-                {isActive && (
-                  <motion.span
-                    layoutId="experience-tab-pill"
-                    className="absolute inset-0 rounded-lg bg-cyan-300"
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 28,
-                    }}
-                  />
-                )}
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`${tab.id}-timeline`}
+                  id={`${tab.id}-tab`}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`relative rounded-lg px-4 py-2.5 font-mono text-xs uppercase tracking-[0.12em] transition-colors sm:px-5 ${
+                    isActive
+                      ? "text-[#061218]"
+                      : "text-white/50 hover:text-white/80"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="experience-tab-pill"
+                      className="absolute inset-0 rounded-lg bg-cyan-300"
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 28,
+                      }}
+                    />
+                  )}
 
-                <span className="relative z-10">{tab.label}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+                  <span className="relative z-10">{tab.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </motion.div>
 
+        {/* Tab description */}
         <motion.p
           key={activeTab}
           initial={{ opacity: 0, y: 6 }}
@@ -150,6 +164,7 @@ const Experiences = () => {
         </motion.p>
       </div>
 
+      {/* Timeline changes when a category is selected */}
       <motion.div
         key={activeTab}
         id={`${activeTab}-timeline`}

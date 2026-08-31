@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ArrowUpRight,
   Check,
@@ -13,11 +13,22 @@ import {
   Send,
 } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import { EncryptedText } from "@/components/ui/encrypted-text";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+    filter: "blur(6px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
 };
 
 const contactLinks = [
@@ -89,7 +100,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative w-full overflow-visible pt-16"
+      className="relative w-full overflow-visible pt-16 pb-24 lg:pb-32"
     >
       {/* Ambient background glows */}
       <div
@@ -110,7 +121,6 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55 }}
           className="mx-auto max-w-3xl text-center"
         >
           <div className="flex items-center justify-center gap-3">
@@ -126,15 +136,11 @@ const Contact = () => {
           </div>
 
           <h2 className="mt-8 text-4xl font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="block">
-              <EncryptedText text="Let's build something" />
-            </span>
+            Let&apos;s build something
             <span className="block text-white/45">
-              <EncryptedText text="thoughtful, useful, and" />
+              thoughtful, useful, and
             </span>
-            <span className="block text-cyan-300">
-              <EncryptedText text="worth shipping." />
-            </span>
+            <span className="block text-cyan-300">worth shipping.</span>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/55 md:text-lg lg:text-xl">
@@ -150,7 +156,7 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.6, delay: 0.08 }}
+          transition={{ delay: 0.08 }}
           className="relative mx-auto mt-14 max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-6 sm:p-8 lg:p-10"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.13),transparent_52%)]" />
@@ -196,7 +202,7 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Contact links */}
+        {/* Contact platform cards */}
         <div className="mx-auto mt-7 grid max-w-4xl gap-4 md:grid-cols-3">
           {contactLinks.map((contact, index) => {
             const Icon = contact.icon;
@@ -215,7 +221,7 @@ const Contact = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
+                transition={{ delay: index * 0.08 }}
               >
                 <Link
                   href={contact.href}
@@ -252,13 +258,13 @@ const Contact = () => {
           })}
         </div>
 
-        {/* Resume link */}
+        {/* Resume CTA */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ delay: 0.1 }}
           className="mt-10 flex justify-center"
         >
           <Link
@@ -271,14 +277,7 @@ const Contact = () => {
             <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </motion.div>
-
       </div>
-        {/* Footer: close to CTA, clear of fixed FloatingDock */}
-        {/* <footer className="mt-10 border-t border-white/10 pt-5 text-center sm:mt-12">
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-white/30">
-            &copy; Designed and built by Salma Manda Putri Nabilah
-          </p>
-        </footer> */}
     </section>
   );
 };

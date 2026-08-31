@@ -1,18 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 
 import { projects } from "./components/projects/data";
 import { ProjectCarousel } from "./components/projects/ProjectCarousel";
 import { TechStack } from "./components/tech-stack/TechStack";
-import { EncryptedText } from "@/components/ui/encrypted-text";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0 },
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+    filter: "blur(6px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1.5,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
 };
 
 const Projects = () => {
@@ -21,18 +32,22 @@ const Projects = () => {
       id="projects"
       className="relative w-full overflow-visible py-16"
     >
-      <div className="pointer-events-none absolute -inset-40 overflow-visible">
+      {/* Ambient section glows */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -inset-40 overflow-visible"
+      >
         <div className="absolute left-1/2 top-1/4 size-136 -translate-x-1/2 rounded-full bg-cyan-400/7 blur-[130px]" />
         <div className="absolute -right-32 bottom-0 size-112 rounded-full bg-indigo-500/8 blur-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+        {/* Section heading */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55 }}
+          viewport={{ amount: 0.25 }}
           className="max-w-3xl"
         >
           <div className="flex items-center gap-3">
@@ -46,14 +61,12 @@ const Projects = () => {
           </div>
 
           <h2 className="mt-8 text-4xl font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="block">
-              <EncryptedText text="Things I build" />
-            </span>
+            Things I build
             <span className="block text-white/45">
-              <EncryptedText text="when curiosity becomes" />
+              when curiosity becomes
             </span>
             <span className="block text-cyan-300">
-              <EncryptedText text="working software." />
+              working software.
             </span>
           </h2>
 
@@ -64,14 +77,24 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <ProjectCarousel projects={projects} />
-
+        {/* Projects carousel */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ delay: 0.12 }}
+        >
+          <ProjectCarousel projects={projects} />
+        </motion.div>
+
+        {/* GitHub CTA */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ delay: 0.18 }}
           className="mt-10 flex justify-center"
         >
           <Link
@@ -85,7 +108,6 @@ const Projects = () => {
             <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </motion.div>
-
       </div>
 
       {/* Full-width Tech Stack marquee */}
@@ -94,7 +116,7 @@ const Projects = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.6, delay: 0.15 }}
+        transition={{ delay: 0.22 }}
         className="relative z-10 mt-24 w-full overflow-hidden"
       >
         <TechStack />
