@@ -142,17 +142,7 @@ const AboutMe = () => {
         </motion.div>
       </div>
 
-      {/* Full-width Tech Stack marquee */}
-      {/* <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        className="relative z-10 mt-24 w-full overflow-hidden"
-      >
-        <TechStack />
-      </motion.div> */}
+      
     </section>
   );
 };

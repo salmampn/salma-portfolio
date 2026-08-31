@@ -19,7 +19,12 @@ export function Marquee({
     <div
       {...props}
       className={cn(
-        "group relative flex w-full overflow-hidden [--duration:45s] [--gap:1.25rem]",
+        /*
+          overflow-x-hidden prevents the moving row from causing horizontal
+          page scroll. overflow-y-visible gives icon auras room to fade
+          vertically instead of cutting them at the marquee boundary.
+        */
+        "group relative flex w-full overflow-x-hidden overflow-y-visible [--duration:45s] [--gap:1.25rem]",
         className,
       )}
     >
@@ -35,7 +40,7 @@ export function Marquee({
           {children}
         </div>
 
-        {/* Exact duplicate ensures the loop has no visible gap */}
+        {/* Duplicate content creates a seamless loop */}
         <div
           aria-hidden="true"
           className="flex shrink-0 items-center gap-[var(--gap)]"

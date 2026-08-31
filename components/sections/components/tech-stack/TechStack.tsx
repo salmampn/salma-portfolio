@@ -4,15 +4,18 @@ import { Braces } from "lucide-react";
 
 import { Marquee } from "@/components/ui/marquee";
 
+import { TechCard } from "./TechCard";
 import { techStack } from "./data";
-import { TechCard } from "./tech-card";
 
 export function TechStack() {
   const reverseTechStack = [...techStack].reverse();
 
   return (
-    <section aria-labelledby="tech-stack-heading" className="w-full">
-      <div className="mx-auto mb-8 flex max-w-7xl flex-col items-center px-6 text-center sm:px-10 lg:px-16">
+    <section
+      aria-labelledby="tech-stack-heading"
+      className="relative w-full overflow-visible"
+    >
+      <div className="mx-auto mb-7 flex max-w-7xl flex-col items-center px-6 text-center sm:mb-9 sm:px-10 lg:px-16">
         <div className="flex items-center justify-center gap-4">
           <Braces className="size-12 text-cyan-300 sm:size-14" />
 
@@ -29,21 +32,19 @@ export function TechStack() {
             </h3>
           </div>
         </div>
+
+        <p className="mt-5 max-w-2xl text-sm leading-6 text-white/50 sm:text-base sm:leading-7">
+          Technologies I use across web development, backend systems, mobile
+          apps, AI projects, databases, and deployment workflows.
+        </p>
       </div>
 
-      <div className="relative w-full overflow-hidden py-2">
-        <Marquee pauseOnHover className="[--duration:58s] py-3">
-          {techStack.map((tech) => (
-            <TechCard key={tech.name} {...tech} />
-          ))}
-        </Marquee>
-
+      <div className="relative w-full">
         <Marquee
-          reverse
           pauseOnHover
-          className="mt-4 [--duration:64s] py-3"
+          className="[--duration:58s] py-6"
         >
-          {reverseTechStack.map((tech) => (
+          {techStack.map((tech) => (
             <TechCard key={tech.name} {...tech} />
           ))}
         </Marquee>

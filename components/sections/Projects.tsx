@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 
-import { ProjectCarousel } from "./components/projects/ProjectCarousel";
 import { projects } from "./components/projects/data";
+import { ProjectCarousel } from "./components/projects/ProjectCarousel";
+import { TechStack } from "./components/tech-stack/TechStack";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -17,7 +18,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative w-full overflow-visible py-24 lg:py-32"
+      className="relative w-full overflow-visible py-12 lg:py-32"
     >
       <div className="pointer-events-none absolute -inset-40 overflow-visible">
         <div className="absolute left-1/2 top-1/4 size-136 -translate-x-1/2 rounded-full bg-cyan-400/7 blur-[130px]" />
@@ -79,7 +80,20 @@ const Projects = () => {
             <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </motion.div>
+
       </div>
+
+      {/* Full-width Tech Stack marquee */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.6, delay: 0.15 }}
+        className="relative z-10 mt-24 w-full overflow-hidden"
+      >
+        <TechStack />
+      </motion.div>
     </section>
   );
 };

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Contact = () => {
   return (
     <div id="contact" className="relative w-full min-h-screen overflow-hidden">

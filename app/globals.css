@@ -152,7 +152,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* MARQUEE */
+/* MARQUEE V1*/
 
 @keyframes marquee {
   from {
@@ -209,6 +209,8 @@ html {
     animation: none;
   }
 }
+
+/* TIMELINE DOT PULSE */
 
 @keyframes dot-pulse {
   0%,
