@@ -18,7 +18,7 @@ export function TechCard({ name, icon: Icon, color }: Tech) {
         {/* Large icon */}
         <Icon
           aria-hidden="true"
-          className="relative size-11 text-[var(--brand)] transition duration-300 group-hover:-rotate-6 sm:size-14"
+          className="relative size-11 text-[var(--brand)] transition duration-300  group-hover:scale-120  group-hover:-rotate-6 sm:size-14"
           style={{
             filter: `drop-shadow(0 0 12px ${color}99)`,
           }}

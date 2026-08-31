@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
-  useMotionTemplate,
   useMotionValue,
   useSpring,
   useTransform,
@@ -86,18 +85,7 @@ export const CometCard = ({
     [`${translateDepth}px`, `-${translateDepth}px`],
   );
 
-  const glareX = useTransform(mouseXSpring, [-0.5, 0.5], [0, 100]);
-  const glareY = useTransform(mouseYSpring, [-0.5, 0.5], [0, 100]);
-
-  const glareBackground = useMotionTemplate`radial-gradient(
-    circle at ${glareX}% ${glareY}%,
-    rgba(255, 255, 255, 0.38) 10%,
-    rgba(255, 255, 255, 0.18) 25%,
-    rgba(255, 255, 255, 0) 70%
-  )`;
-
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    // Disable cursor-following animation below Tailwind's lg breakpoint.
     if (!isDesktop || !ref.current) return;
 
     const rect = ref.current.getBoundingClientRect();
@@ -114,14 +102,16 @@ export const CometCard = ({
     y.set(0);
   };
 
-  // Reset the interactive values when resizing down from desktop.
-  // This leaves the mobile/tablet glare centered at 50% / 50%.
   useEffect(() => {
     if (!isDesktop) {
       x.set(0);
       y.set(0);
     }
   }, [isDesktop, x, y]);
+
+  // Static white glare behind the upper-left logo/icon.
+const glareBackground =
+  "radial-gradient(circle at 22% 28%, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.18) 25%, rgba(255, 255, 255, 0) 70%)";
 
   return (
     <div
@@ -145,7 +135,6 @@ export const CometCard = ({
                 boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.35)",
               }
             : {
-                // Static shadow remains visible on mobile, sm, and md.
                 boxShadow: "0px 8px 18px rgba(0, 0, 0, 0.28)",
               }
         }
@@ -163,18 +152,12 @@ export const CometCard = ({
       >
         {children}
 
-        {/* 
-          Always render the glare.
-          On mobile/tablet, x and y remain zero, so it stays as a subtle
-          centered highlight. On desktop, it follows the mouse cursor.
-        */}
-        <motion.div
+        <div
           className="pointer-events-none absolute inset-0 z-50 h-full w-full rounded-[16px] mix-blend-overlay"
           style={{
-            background: glareBackground,
             opacity: isDesktop ? 0.45 : 0.22,
+            background: glareBackground
           }}
-          transition={{ duration: 0.2 }}
         />
       </motion.div>
     </div>

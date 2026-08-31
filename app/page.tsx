@@ -1,6 +1,6 @@
 "use client";
 
-import { AuroraBackground } from "@/components/ui/aurora-background";
+import { CosmicSingularity } from "@/components/ui/cosmic-singularity";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import Hero from "@/components/sections/Hero";
 import AboutMe from "@/components/sections/AboutMe";
@@ -56,7 +56,8 @@ export default function Home() {
   ];
 
   return (
-    <AuroraBackground className="w-full">
+    <div className="relative min-h-screen w-full bg-[#030303] text-white">
+      <CosmicSingularity className="fixed inset-0 pointer-events-none z-0" />
       <SmoothPageScroll />
       <main className="relative z-10 flex w-full flex-col items-center justify-center overflow-hidden">
         <section id="home" className="w-full scroll-mt-8">
@@ -87,6 +88,6 @@ export default function Home() {
           mobileClassName="fixed bottom-6 right-6"
         />
       </div>
-    </AuroraBackground>
+    </div>
   );
 }
