@@ -88,7 +88,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative  w-full overflow-visible pt-12 lg:pt-32"
+      className="relative w-full overflow-visible pt-12"
     >
       {/* Ambient background glows */}
       <div
@@ -269,11 +269,11 @@ const Contact = () => {
 
       </div>
         {/* Footer: close to CTA, clear of fixed FloatingDock */}
-        <footer className="mt-10 border-t border-white/10 pt-5 text-center sm:mt-12">
-          <p className="font-mono text-xs uppercase tracking-[0.16em] ml-12 text-white/30">
+        {/* <footer className="mt-10 border-t border-white/10 pt-5 text-center sm:mt-12">
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-white/30">
             &copy; Designed and built by Salma Manda Putri Nabilah
           </p>
-        </footer>
+        </footer> */}
     </section>
   );
 };
