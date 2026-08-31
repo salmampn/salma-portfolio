@@ -26,8 +26,8 @@ export const experiences: CategorizedExperienceItem[] = [
       "Resolved 20+ integration bugs, reducing production incidents by 40%.",
     ],
     tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "SQL", "Git"],
-    imageWidth: 256,
-    imageHeight: 256,
+    imageWidth: 200,
+    imageHeight: 200,
   },
   {
     category: "professional",
@@ -43,9 +43,9 @@ export const experiences: CategorizedExperienceItem[] = [
       "Guided 80+ students in Object-Oriented Programming through practical labs and coding sessions.",
     responsibilities: [
       "Taught core OOP concepts and object-oriented design principles.",
-      "Led hands-on coding and debugging sessions.",
       "Created lab materials and structured learning exercises.",
       "Developed OOP assessments based on real-world cases.",
+      "Led hands-on coding and debugging sessions for students.",
     ],
     tags: [
       "Object-Oriented Programming",

@@ -8,6 +8,7 @@ import { FiGithub } from "react-icons/fi";
 import { projects } from "./components/projects/data";
 import { ProjectCarousel } from "./components/projects/ProjectCarousel";
 import { TechStack } from "./components/tech-stack/TechStack";
+import { EncryptedText } from "@/components/ui/encrypted-text";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -18,7 +19,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative w-full overflow-visible py-12 lg:py-32"
+      className="relative w-full overflow-visible py-16"
     >
       <div className="pointer-events-none absolute -inset-40 overflow-visible">
         <div className="absolute left-1/2 top-1/4 size-136 -translate-x-1/2 rounded-full bg-cyan-400/7 blur-[130px]" />
@@ -44,15 +45,19 @@ const Projects = () => {
             <div className="h-px w-20 bg-cyan-300/40" />
           </div>
 
-          <h2 className="mt-8 text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
-            Things I build
-            <span className="block text-white/45">
-              when curiosity becomes
+          <h2 className="mt-8 text-4xl font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="block">
+              <EncryptedText text="Things I build" />
             </span>
-            <span className="block text-cyan-300">working software.</span>
+            <span className="block text-white/45">
+              <EncryptedText text="when curiosity becomes" />
+            </span>
+            <span className="block text-cyan-300">
+              <EncryptedText text="working software." />
+            </span>
           </h2>
 
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">
+          <p className="mt-6 max-w-3xl text-base leading-7 text-white/55 md:text-lg lg:text-xl">
             A selection of full-stack, mobile, and AI-focused work—from
             source-grounded chat experiences to practical tracking and content
             management systems.

@@ -14,6 +14,8 @@ export const projects: Project[] = [
       "Built a client-side retrieval engine that ranks the four most relevant source passages per query.",
       "Added document upload, preview, management, evidence panels, and source citations.",
       "Deployed the full-stack application on Vercel with an Express serverless API.",
+      "Integrated the Gemini API to generate conversational answers grounded in retrieved document context.",
+      "Designed a responsive chat interface that clearly separates AI responses, retrieved evidence, and cited sources.",
     ],
     tags: [
       "React",
@@ -41,6 +43,8 @@ export const projects: Project[] = [
       "Integrated Google Maps SDK to visualize recorded GPS routes.",
       "Built a foreground TrackingService for continuous background location tracking.",
       "Implemented Firebase Auth and Firestore for account-based run history.",
+      "Developed native Android screens in Kotlin for starting, stopping, and reviewing tracked runs.",
+      "Persisted run-related data in Firestore so users can access their activity history across sessions.",
     ],
     tags: [
       "Kotlin",
@@ -67,6 +71,8 @@ export const projects: Project[] = [
       "Built responsive pages for the studio profile, projects, and core values.",
       "Created a CMS-driven module for updating 20+ portfolio entries without code changes.",
       "Collaborated across PHP, Laravel, React, and MySQL in an eight-person team.",
+      "Implemented database-backed content management workflows for company information and project data.",
+      "Improved the editor experience by enabling non-technical users to publish and update portfolio content through the CMS.",
     ],
     tags: ["PHP", "Laravel", "React", "MySQL", "CMS", "Responsive Design"],
     image: "/projects/ss-i27.png",

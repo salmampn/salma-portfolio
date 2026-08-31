@@ -159,7 +159,8 @@ void main() {
 `;
 
 const defaultColorInner = "#06b6d4"; // Radiant Cyan core
-const defaultColorOuter = "#10b981"; // Vibrant Emerald outer glow
+// const defaultColorInner = "#ffd700"; // Glowing gold core
+const defaultColorOuter = "#7a00ff"; // Violet outer ring
 
 function hexToVec3(hex: string): Vector3 {
   let value = hex.trim();

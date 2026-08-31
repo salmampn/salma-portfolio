@@ -106,7 +106,7 @@ export function ProjectFlipCard({
         <div className="absolute inset-0 flex rotate-y-180 flex-col overflow-hidden rounded-3xl border border-cyan-300/30 bg-[#061318]/95 p-5 [backface-visibility:hidden] sm:p-7 lg:p-8">
           {/* Ambient background glow */}
           <div
-            className={`pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-gradient-to-br ${project.accent} opacity-20 blur-3xl`}
+            className={`pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-linear-to-br ${project.accent} opacity-20 blur-3xl`}
           />
           <div className="pointer-events-none absolute -bottom-24 -left-20 size-72 rounded-full bg-cyan-300/10 blur-3xl" />
 
@@ -116,7 +116,7 @@ export function ProjectFlipCard({
                 {project.eyebrow}
               </p>
 
-              <h3 className="mt-2 text-xl font-semibold tracking-[-0.035em] text-white sm:text-2xl lg:text-3xl">
+              <h3 className="mt-2 text-xl font-semibold tracking-[-0.035em] text-white md:text-4xl">
                 {project.title}
               </h3>
             </div>
@@ -134,16 +134,16 @@ export function ProjectFlipCard({
             </button>
           </div>
 
-          <p className="relative mt-4 text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
+          <p className="relative mt-4 text-sm leading-6 text-white/65 sm:leading-7 md:text-lg lg:text-xl">
             {project.shortDescription}
           </p>
 
           {/* Project highlights */}
           <ul className="relative mt-4 space-y-2 sm:mt-5 sm:space-y-3">
-            {project.highlights.slice(0, 5).map((highlight) => (
+            {project.highlights.slice(0, 4).map((highlight) => (
               <li
                 key={highlight}
-                className="flex items-start gap-2.5 text-xs leading-5 text-white/60 sm:gap-3 sm:text-sm sm:leading-6"
+                className="flex items-start gap-2.5 text-xs leading-5 text-white/60 sm:gap-3 md:text-base sm:leading-6 lg:text-lg"
               >
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
                 <span>{highlight}</span>

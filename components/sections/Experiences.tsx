@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 import { Timeline } from "@/components/ui/timeline";
+import { EncryptedText } from "@/components/ui/encrypted-text";
 import {
   experiences,
   type ExperienceCategory,
@@ -56,7 +57,7 @@ const Experiences = () => {
   return (
     <section
       id="experiences"
-      className="relative w-full overflow-hidden py-12 lg:py-32"
+      className="relative w-full overflow-hidden py-16"
     >
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <motion.div
@@ -77,13 +78,19 @@ const Experiences = () => {
             <div className="h-px w-20 bg-cyan-300/40" />
           </div>
 
-          <h2 className="mt-8 max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
-            Where theory
-            <span className="block text-white/45">meets real</span>
-            <span className="block text-cyan-300">impact.</span>
+          <h2 className="mt-8 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="block">
+              <EncryptedText text="Where theory" />
+            </span>
+            <span className="block text-white/45">
+              <EncryptedText text="meets real" />
+            </span>
+            <span className="block text-cyan-300">
+              <EncryptedText text="impact." />
+            </span>
           </h2>
 
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">
+          <p className="mt-6 max-w-3xl text-base leading-7 text-white/55 md:text-lg lg:text-xl">
             Professional work, teaching experience, research communication, and
             technology outreach.
           </p>
@@ -137,7 +144,7 @@ const Experiences = () => {
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25 }}
-          className="mx-auto mb-2 max-w-2xl text-center text-sm leading-6 text-white/45 sm:text-base"
+          className="mx-auto mb-2 max-w-2xl text-center text-base leading-6 text-white/45 md:text-lg lg:text-xl"
         >
           {activeTabData.description}
         </motion.p>

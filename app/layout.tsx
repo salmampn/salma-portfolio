@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Salma's Portfolio",
+  title: "SalmaManda.zip",
   description: "Salma Manda Portfolio",
 };
 

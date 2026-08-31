@@ -13,6 +13,7 @@ import {
   Send,
 } from "lucide-react";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { EncryptedText } from "@/components/ui/encrypted-text";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -88,7 +89,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative w-full overflow-visible pt-12"
+      className="relative w-full overflow-visible pt-16"
     >
       {/* Ambient background glows */}
       <div
@@ -124,15 +125,19 @@ const Contact = () => {
             <div className="h-px w-14 bg-cyan-300/40" />
           </div>
 
-          <h2 className="mt-8 text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
-            Let&apos;s build something
-            <span className="block text-white/45">
-              thoughtful, useful, and
+          <h2 className="mt-8 text-4xl font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="block">
+              <EncryptedText text="Let's build something" />
             </span>
-            <span className="block text-cyan-300">worth shipping.</span>
+            <span className="block text-white/45">
+              <EncryptedText text="thoughtful, useful, and" />
+            </span>
+            <span className="block text-cyan-300">
+              <EncryptedText text="worth shipping." />
+            </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/55 md:text-lg lg:text-xl">
             I&apos;m open to software engineering, AI/ML, web development, and
             mobile development opportunities. If you have an idea, role, or
             challenge worth discussing, I&apos;d love to hear from you.
@@ -234,11 +239,11 @@ const Contact = () => {
                     {contact.label}
                   </p>
 
-                  <p className="relative mt-2 text-sm font-semibold text-white/90">
+                  <p className="relative mt-2 text-base font-semibold text-white/90">
                     {contact.value}
                   </p>
 
-                  <p className="relative mt-3 text-sm leading-6 text-white/45">
+                  <p className="relative mt-3 text-base leading-6 text-white/45">
                     {contact.description}
                   </p>
                 </Link>
@@ -257,7 +262,7 @@ const Contact = () => {
           className="mt-10 flex justify-center"
         >
           <Link
-            href="/SalmaMandaPutriNabilah.pdf"
+            href="/resume.pdf"
             target="_blank"
             className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-white/70 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 hover:text-cyan-100"
           >

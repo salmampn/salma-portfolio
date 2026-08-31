@@ -6,7 +6,7 @@ export function TechCard({ name, icon: Icon, color }: Tech) {
   return (
     <div
       style={{ "--brand": color } as CSSProperties}
-      className="group mx-5 flex min-w-26 flex-col items-center justify-center gap-3 py-12 text-center sm:mx-7 sm:min-w-31 sm:gap-4"
+      className="group mx-5 flex min-w-26 flex-col items-center justify-center gap-3 py-6 text-center sm:mx-7 sm:min-w-31 sm:gap-4"
     >
       <div className="relative flex size-16 items-center justify-center sm:size-20">
         {/* Soft technology-color aura */}

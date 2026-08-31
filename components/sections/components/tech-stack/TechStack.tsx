@@ -8,7 +8,6 @@ import { TechCard } from "./TechCard";
 import { techStack } from "./data";
 
 export function TechStack() {
-  const reverseTechStack = [...techStack].reverse();
 
   return (
     <section
@@ -20,20 +19,20 @@ export function TechStack() {
           <Braces className="size-14 text-cyan-300 md:size-20" />
 
           <div className="text-left">
-            <p className="font-bold text-2xl uppercase tracking-[0.18em] text-cyan-300 sm:text-3xl">
+            <p className="font-bold text-2xl uppercase tracking-[0.18em] text-cyan-300 md:text-3xl lg:text-4xl">
               Tech stack
             </p>
 
             <h3
               id="tech-stack-heading"
-              className="mt-2 text-base font-semibold text-white sm:text-xl"
+              className="mt-2 text-base font-semibold text-white md:text-xl lg:text-3xl"
             >
               Tools I use to build and experiment.
             </h3>
           </div>
         </div>
 
-        <p className="mt-5 max-w-2xl text-sm leading-6 text-white/50 sm:text-base sm:leading-7">
+        <p className="mt-5 max-w-2xl text-base leading-6 text-white/50 md:leading-7 md:text-xl lg:leading-8">
           Technologies I use across web development, backend systems, mobile
           apps, AI projects, databases, and deployment workflows.
         </p>

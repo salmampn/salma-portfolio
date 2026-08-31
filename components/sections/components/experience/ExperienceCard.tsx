@@ -72,7 +72,7 @@ export function ExperienceCard({
               {summary}
             </p>
 
-            <ul className="mt-6 w-full space-y-4">
+            <ul className="mt-6 w-full space-y-4 text-start items-start">
               {responsibilities.map((item) => (
                 <li
                   key={item}

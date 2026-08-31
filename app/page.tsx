@@ -2,11 +2,14 @@
 
 import { CosmicSingularity } from "@/components/ui/cosmic-singularity";
 import { FloatingDock } from "@/components/ui/floating-dock";
+import SmoothPageScroll from "@/components/ui/SmoothPageScroll";
+
 import Hero from "@/components/sections/Hero";
 import AboutMe from "@/components/sections/AboutMe";
 import Experiences from "@/components/sections/Experiences";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
+
 import {
   IconBriefcase,
   IconFolder,
@@ -14,7 +17,6 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import { MdConnectWithoutContact } from "react-icons/md";
-import SmoothPageScroll from "@/components/ui/SmoothPageScroll";
 
 export default function Home() {
   const navItems = [
@@ -47,38 +49,26 @@ export default function Home() {
       href: "#projects",
     },
     {
-      title: "Contact",
+      title: "Connect",
       icon: (
-        <MdConnectWithoutContact  className="h-full w-full text-white group-hover:text-white" />
+        <MdConnectWithoutContact className="h-full w-full text-white group-hover:text-white" />
       ),
       href: "#contact",
     },
   ];
 
   return (
-    <div className="relative min-h-screen w-full bg-[#030303] text-white">
-      <CosmicSingularity className="fixed inset-0 pointer-events-none z-0" />
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-[#030303] text-white">
+      <CosmicSingularity className="pointer-events-none fixed inset-0 z-0" />
+
       <SmoothPageScroll />
-      <main className="relative z-10 flex w-full flex-col items-center justify-center overflow-hidden">
-        <section id="home" className="w-full scroll-mt-8">
-          <Hero />
-        </section>
 
-        <section id="about" className="w-full scroll">
-          <AboutMe />
-        </section>
-
-        <section id="journey" className="w-full scroll-mt-8">
-          <Experiences />
-        </section>
-
-        <section id="projects" className="w-full scroll-mt-8">
-          <Projects />
-        </section>
-
-        <section id="achievements" className="w-full scroll-mt-8">
-          <Contact />
-        </section>
+      <main className="relative z-10 flex w-full flex-col overflow-hidden pb-32 pt-8 md:pt-0 lg:pt-6">
+        <Hero />
+        <AboutMe />
+        <Experiences />
+        <Projects />
+        <Contact />
       </main>
 
       <div className="pointer-events-auto fixed inset-x-0 bottom-6 z-50 flex items-center justify-center">
