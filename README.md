@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Salma Manda — Portfolio
 
-## Getting Started
+The site presents selected projects, professional and community experience, technical skills, and contact information through an interactive, responsive interface.
 
-First, run the development server:
+## Live Site
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[https://salmamanda.vercel.app/](https://salmamanda.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Area       | Technology                                                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Framework  | [Next.js](https://nextjs.org/)                                                                                                              |
+| Language   | [TypeScript](https://www.typescriptlang.org/)                                                                                               |
+| Styling    | [Tailwind CSS](https://tailwindcss.com/)                                                                                                    |
+| Animation  | [Framer Motion](https://www.framer.com/motion/) / [Motion](https://motion.dev/)                                                             |
+| 3D visuals | [Three.js](https://threejs.org/)                                                                                                            |
+| Icons      | [Lucide React](https://lucide.dev/), [Tabler Icons](https://tabler.io/icons), and [React Icons](https://react-icons.github.io/react-icons/) |
+| Deployment | [Vercel](https://vercel.com/)                                                                                                               |
+| Design     | [Figma](https://figma.com/), [Dribbble](https://dribbble.com/)                                                                              |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## UI and Design System
 
-## Learn More
+The interface is built with custom reusable React components in the `components/ui` directory and styled with Tailwind CSS.
 
-To learn more about Next.js, take a look at the following resources:
+Visual interaction patterns and component ideas are inspired by the React/Tailwind ecosystem, including:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Aceternity UI](https://ui.aceternity.com/) — animated backgrounds, interactive cards, floating docks, and portfolio-oriented UI patterns
+- [Magic UI](https://magicui.design/) — animated text, visual effects, marquess, and landing-page interaction patterns
+- [Lightswind UI](https://lightswind.com/) — reusable React and Tailwind UI components, blocks, and motion patterns
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All components in this repository are adapted and customized for this portfolio.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repository is a personal portfolio project.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please do not reuse personal information, images, résumé content, project materials, or branding without permission. You are welcome to use the structure and general implementation ideas as learning references.
+
+## Contact
+
+- Email: [salmamanda03@gmail.com](mailto:salmamanda03@gmail.com)
+- GitHub: [@salmampn](https://github.com/salmampn)
+- LinkedIn: [Salma Manda](https://www.linkedin.com/in/salmamanda/)
+
+---
+
+Designed and built by **Salma Manda**.
