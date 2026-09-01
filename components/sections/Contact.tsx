@@ -256,7 +256,7 @@ const Contact = () => {
           className="mt-10 flex justify-center"
         >
           <Link
-            href="/resume.pdf"
+            href="/SalmaMandaPutriNabilah.pdf"
             target="_blank"
             className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-white/70 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 hover:text-cyan-100"
           >

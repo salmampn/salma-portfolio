@@ -144,7 +144,7 @@ const AboutMe = () => {
                 </a>
 
                 <a
-                  href="/resume.pdf"
+                  href="/SalmaMandaPutriNabilah.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 border border-white/20 px-5 py-3 font-mono text-xs uppercase tracking-[0.12em] text-white/70 transition-colors hover:border-white/40 hover:text-white"
