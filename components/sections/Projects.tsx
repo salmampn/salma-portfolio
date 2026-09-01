@@ -32,15 +32,6 @@ const Projects = () => {
       id="projects"
       className="relative w-full overflow-visible py-16"
     >
-      {/* Ambient section glows */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -inset-40 overflow-visible"
-      >
-        <div className="absolute left-1/2 top-1/4 size-136 -translate-x-1/2 rounded-full bg-cyan-400/7 blur-[130px]" />
-        <div className="absolute -right-32 bottom-0 size-112 rounded-full bg-indigo-500/8 blur-[130px]" />
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         {/* Section heading */}
         <motion.div
@@ -82,7 +73,7 @@ const Projects = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ amount: 0.15 }}
           transition={{ delay: 0.12 }}
         >
           <ProjectCarousel projects={projects} />
@@ -93,7 +84,7 @@ const Projects = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ amount: 0.2 }}
           transition={{ delay: 0.18 }}
           className="mt-10 flex justify-center"
         >
@@ -115,7 +106,7 @@ const Projects = () => {
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
+        viewport={{ amount: 0.15 }}
         transition={{ delay: 0.22 }}
         className="relative z-10 mt-24 w-full overflow-hidden"
       >

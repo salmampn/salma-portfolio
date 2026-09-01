@@ -21,7 +21,7 @@ const fadeUp: Variants = {
     y: 0,
     filter: "blur(0px)",
     transition: {
-      duration: 0.7,
+      duration: 1.5,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -76,7 +76,7 @@ const Experiences = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ amount: 0.25 }}
           className="mb-10"
         >
           <div className="flex items-center gap-3">
@@ -106,7 +106,7 @@ const Experiences = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ amount: 0.25 }}
           transition={{ delay: 0.12 }}
           className="mb-8 flex w-full justify-center"
         >
@@ -170,10 +170,12 @@ const Experiences = () => {
         id={`${activeTab}-timeline`}
         role="tabpanel"
         aria-labelledby={`${activeTab}-tab`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-        className="relative w-full overflow-clip"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.25 }}
+        transition={{ delay: 0.15 }}
+        className="relative w-full overflow-visible"
       >
         <Timeline data={timelineData} />
       </motion.div>

@@ -17,6 +17,7 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import { MdConnectWithoutContact } from "react-icons/md";
+import SmoothCursor from "@/components/ui/smooth-cursor";
 
 export default function Home() {
   const navItems = [
@@ -62,6 +63,16 @@ export default function Home() {
       <CosmicSingularity className="pointer-events-none fixed inset-0 z-0" />
 
       <SmoothPageScroll />
+
+      <SmoothCursor
+        color="#000000"
+        size={18}
+        rotateOnMove
+        scaleOnClick
+        glowEffect
+        showTrail={false}
+        magneticElements="[data-magnetic]"
+      />
 
       <main className="relative z-10 flex w-full flex-col overflow-hidden pb-32 pt-8 md:pt-0 lg:pt-6">
         <Hero />

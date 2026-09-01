@@ -60,7 +60,7 @@ const AboutMe = () => {
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ amount: 0.2 }}
             transition={{ delay: 0.12 }}
             className="flex justify-center lg:justify-start"
           >
@@ -79,7 +79,6 @@ const AboutMe = () => {
                     sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 320px"
                     className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
                   />
-
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#070B14]/55 via-transparent to-transparent" />
                 </div>
               </div>
@@ -92,9 +91,9 @@ const AboutMe = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ amount: 0.2 }}
           transition={{ delay: 0.2 }}
-          className="mt-14 grid gap-10 border-t-2 border-[#06b6d4]/70 pt-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end"
+          className="mt-14 grid gap-10 border-t-2 border-cyan-300/10 pt-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end"
         >
           <div className="flex w-full flex-col gap-4">
             {/* Biography */}

@@ -40,7 +40,7 @@ export function ExperienceCard({
               </div>
             )}
 
-            <h3 className="text-3xl font-bold leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl md:mt-6 lg:mt-0">
+            <h3 className="text-4xl font-bold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-5xl md:mt-6 lg:mt-0">
               {role.map((line, index) => (
                 <span
                   key={`${line}-${index}`}
@@ -54,21 +54,16 @@ export function ExperienceCard({
                 </span>
               ))}
             </h3>
-
-            <div className="mt-5 flex flex-wrap justify-center gap-x-3 gap-y-1 font-mono text-[10px] uppercase tracking-[0.12em] text-white/40 sm:text-xs sm:tracking-[0.14em] md:justify-start">
-              <span>
-                {startDate} — {endDate}
-              </span>
-
-              <span className="hidden text-white/20 sm:inline">•</span>
-
+              
+            <div className="mt-5 flex flex-col items-center md:items-start gap-y-1 font-mono text-xs uppercase tracking-[0.12em] text-white/40 md:justify-start">
+              <span>{startDate} — {endDate}</span>
               <span>{duration}</span>
             </div>
           </div>
 
           {/* Right: centered on mobile, aligned left from md onward */}
-          <div className="flex min-w-0 flex-col items-center text-start">
-            <p className="text-base leading-7 text-white sm:text-lg sm:leading-8">
+          <div className="flex min-w-0 flex-col items-center text-start lg:justify-between">
+            <p className="text-base leading-7 text-white md:text-lg lg:text-xl">
               {summary}
             </p>
 
@@ -80,14 +75,14 @@ export function ExperienceCard({
                 >
                   <CheckCircle2 className="mt-1 size-4 shrink-0 text-cyan-300" />
 
-                  <span className="text-sm leading-6 text-white/60 sm:text-base sm:leading-7">
+                  <span className="text-sm leading-6 text-white/60 md:text-base">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-6 flex flex-wrap justify-center gap-2 md:justify-start">
+            <div className="mt-6 flex flex-wrap justify-start gap-2">
               {tags.map((tag) => (
                 <span
                   key={tag}

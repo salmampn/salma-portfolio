@@ -102,25 +102,13 @@ const Contact = () => {
       id="contact"
       className="relative w-full overflow-visible pt-16 pb-24 lg:pb-32"
     >
-      {/* Ambient background glows */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -inset-40 overflow-visible"
-      >
-        <div className="absolute left-1/2 top-1/3 size-[32rem] -translate-x-1/2 rounded-full bg-cyan-400/[0.08] blur-[140px]" />
-
-        <div className="absolute -left-32 bottom-0 size-[28rem] rounded-full bg-emerald-400/[0.06] blur-[140px]" />
-
-        <div className="absolute -right-32 top-1/4 size-[26rem] rounded-full bg-blue-500/[0.06] blur-[140px]" />
-      </div>
-
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         {/* Section heading */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ amount: 0.25 }}
           className="mx-auto max-w-3xl text-center"
         >
           <div className="flex items-center justify-center gap-3">
@@ -155,8 +143,8 @@ const Contact = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ delay: 0.08 }}
+          viewport={{ amount: 0.25 }}
+          transition={{ delay: 0.15 }}
           className="relative mx-auto mt-14 max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-6 sm:p-8 lg:p-10"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.13),transparent_52%)]" />
@@ -220,8 +208,8 @@ const Contact = () => {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.08 }}
+                viewport={{ amount: 0.25 }}
+                transition={{ delay: 0.18 }}
               >
                 <Link
                   href={contact.href}
@@ -263,8 +251,8 @@ const Contact = () => {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ delay: 0.1 }}
+          viewport={{ amount: 0.25 }}
+          transition={{ delay: 0.21 }}
           className="mt-10 flex justify-center"
         >
           <Link

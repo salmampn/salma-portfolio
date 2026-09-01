@@ -65,17 +65,14 @@ export function ProjectFlipCard({
             className="object-cover object-top transition duration-700 group-hover:scale-[1.025]"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#03070d] via-[#03070d]/35 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#03070d] via-[#03070d]/35 to-transparent" />
 
-          {/* Browser window controls */}
-          <div className="absolute left-5 top-5 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/20 px-3 py-2 backdrop-blur-sm">
-            <span className="size-2 rounded-full bg-red-300/70" />
-            <span className="size-2 rounded-full bg-amber-200/70" />
-            <span className="size-2 rounded-full bg-emerald-300/70" />
+          <div className="absolute left-8 top-8 rounded-full border border-white/10 bg-black/25 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white/55 backdrop-blur-sm">
+            project.preview
           </div>
 
-          <div className="absolute right-5 top-5 rounded-full border border-white/10 bg-black/25 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white/55 backdrop-blur-sm">
-            project.preview
+          <div className="absolute right-8 top-8 flex size-11 shrink-0 items-center justify-center rounded-full border border-cyan-200/30 bg-cyan-300/10 text-cyan-100 backdrop-blur-md transition duration-300 group-hover:rotate-[-25deg] group-hover:bg-cyan-300/20">
+            <RotateCcw className="size-4" />
           </div>
 
           {/* Project caption */}
@@ -93,10 +90,6 @@ export function ProjectFlipCard({
                 <p className="mt-2 max-w-xl truncate text-sm text-white/55 sm:text-base">
                   {project.eyebrow}
                 </p>
-              </div>
-
-              <div className="flex size-11 shrink-0 items-center justify-center rounded-full border border-cyan-200/30 bg-cyan-300/10 text-cyan-100 backdrop-blur-md transition duration-300 group-hover:rotate-[-25deg] group-hover:bg-cyan-300/20">
-                <RotateCcw className="size-4" />
               </div>
             </div>
           </div>
@@ -128,7 +121,7 @@ export function ProjectFlipCard({
                 event.stopPropagation();
                 toggleFlip();
               }}
-              className="relative inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.05] text-white/70 transition hover:border-cyan-300/50 hover:bg-cyan-300/10 hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              className="reliative top-5 flex size-11 shrink-0 items-center justify-center rounded-full border border-cyan-200/30 bg-cyan-300/10 text-cyan-100 backdrop-blur-md transition duration-300 group-hover:rotate-[-25deg] group-hover:bg-cyan-300/20"
             >
               <RotateCcw className="size-4" />
             </button>
@@ -140,10 +133,12 @@ export function ProjectFlipCard({
 
           {/* Project highlights */}
           <ul className="relative mt-4 space-y-2 sm:mt-5 sm:space-y-3">
-            {project.highlights.slice(0, 4).map((highlight) => (
+            {project.highlights.slice(0, 4).map((highlight, index) => (
               <li
                 key={highlight}
-                className="flex items-start gap-2.5 text-xs leading-5 text-white/60 sm:gap-3 md:text-base sm:leading-6 lg:text-lg"
+                className={`items-start gap-2.5 text-xs leading-5 text-white/60 sm:gap-3 sm:leading-6 md:text-base lg:text-lg ${
+                  index === 3 ? "hidden sm:flex" : "flex"
+                }`}
               >
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
                 <span>{highlight}</span>
@@ -174,7 +169,7 @@ export function ProjectFlipCard({
                 className="group/link inline-flex items-center gap-2 rounded-full border border-cyan-300/35 bg-cyan-300/10 px-3.5 py-2 font-mono text-[11px] text-cyan-100 transition hover:border-cyan-200/70 hover:bg-cyan-300/20 sm:px-4 sm:py-2.5 sm:text-xs"
               >
                 <ExternalLink className="size-3.5" />
-                Live demo
+                  Live demo
                 <ArrowUpRight className="size-3.5 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
               </Link>
             )}

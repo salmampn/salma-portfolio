@@ -95,7 +95,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ))}
 
         <div
-          style={{ height: `${height}px` }}
+           style={{ height: `${Math.max(0, height - 56)}px` }}
           className="absolute left-[31px] top-0 w-0.5 overflow-hidden rounded-full bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-white/15 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_5%,black_20%,black_80%,transparent_100%)] md:left-[31px]"
         >
           <motion.div
